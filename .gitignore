@@ -5,10 +5,11 @@
 *.dylib
 *.dll
 *.a
-*.lib
-*.exe
+##*.lib
+#*.exe
 *.out
 *.app
+*.vscode
 
 # Build directories
 build/
