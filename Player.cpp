@@ -21,13 +21,17 @@ void Player::handleInput() {
     bool rolling = false;
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-        rotation.x += rotationSpeed * 0.5f;
-        if (visualRotation.x < maxPitch) visualRotation.x += rotationSpeed * 0.5f;
+        float pIn = -rotationSpeed * 0.5f;
+        rotation.x += pIn * cos(rotation.z);
+        rotation.y += pIn * sin(rotation.z);
+        if (visualRotation.x > -maxPitch) visualRotation.x += pIn;
         pitching = true;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        rotation.x -= rotationSpeed * 0.5f;
-        if (visualRotation.x > -maxPitch) visualRotation.x -= rotationSpeed * 0.5f;
+        float pIn = rotationSpeed * 0.5f;
+        rotation.x += pIn * cos(rotation.z);
+        rotation.y += pIn * sin(rotation.z);
+        if (visualRotation.x < maxPitch) visualRotation.x += pIn;
         pitching = true;
     }
 
