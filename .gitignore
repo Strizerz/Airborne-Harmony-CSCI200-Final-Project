@@ -3,13 +3,13 @@
 *.obj
 *.so
 *.dylib
-*.dll
+#*.dll
 *.a
-##*.lib
+*.lib
 #*.exe
 *.out
 *.app
-*.vscode
+.vscode/
 
 # Build directories
 build/
